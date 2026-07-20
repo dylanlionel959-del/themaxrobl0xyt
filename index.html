@@ -1,0 +1,453 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MRY - High Quality Video Creator</title>
+    <!-- Tailwind CSS CDN para estilos responsivos y modernos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para fuentes modernas de estilo tecnológico y cinematográfico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712; /* Azul ultra oscuro / negro */
+        }
+        .font-tech {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        /* Efecto de brillo de fondo para dar profundidad */
+        .blue-glow {
+            box-shadow: 0 0 50px -10px rgba(14, 165, 233, 0.15);
+        }
+        .neon-border {
+            box-shadow: 0 0 20px -5px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen selection:bg-blue-600 selection:text-white overflow-x-hidden">
+
+    <!-- DECORACIONES DE FONDO (GRADIENTES AZULES CINEMÁTICOS) -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-[1200px] right-10 w-[500px] h-[500px] bg-indigo-900/10 rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-cyan-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- CABECERA / MENÚ DE NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo principal -->
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-tech font-bold text-xl text-slate-950 shadow-lg shadow-blue-500/20">
+                        M
+                    </div>
+                    <span class="font-tech text-2xl font-bold tracking-tight bg-gradient-to-r from-white via-blue-100 to-blue-400 bg-clip-text text-transparent">
+                        The MRY
+                    </span>
+                </div>
+
+                <!-- Menú para dispositivos de escritorio -->
+                <nav class="hidden md:flex space-x-1 items-center">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-all duration-200">Home</a>
+                    <a href="#showcase" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-all duration-200">First 8K Video</a>
+                    <a href="#examples" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-all duration-200">UHD Examples</a>
+                    <a href="#gallery" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-all duration-200">Video Gallery</a>
+                    <a href="#services" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-all duration-200">Services</a>
+                    <a href="https://mr3gdps1938.ps.fhgdps.com/" target="_blank" class="ml-4 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all duration-200 font-tech flex items-center gap-2 shadow-lg shadow-blue-600/20 active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        My GDPS
+                    </a>
+                </nav>
+
+                <!-- Botón de menú móvil -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú desplegable móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-900 transition-all duration-300">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Home</a>
+                <a href="#showcase" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">First 8K Video</a>
+                <a href="#examples" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">UHD Examples</a>
+                <a href="#gallery" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Video Gallery</a>
+                <a href="#services" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Services</a>
+                <a href="https://mr3gdps1938.ps.fhgdps.com/" target="_blank" class="block mx-4 my-3 px-5 py-3 rounded-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-500 transition text-center font-tech shadow-md">
+                    My GDPS
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE BIENVENIDA / HERO SECTION -->
+    <section id="home" class="relative pt-12 pb-20 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center">
+            <!-- Etiqueta de estado/frecuencia de subida -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 animate-pulse">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+                Fresh content uploaded every 5 to 9 days
+            </div>
+
+            <!-- Título principal llamativo -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8">
+                <span class="block text-slate-100">Welcome to the Universe of</span>
+                <span class="block bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                    The MRY Creations
+                </span>
+            </h1>
+
+            <!-- Descripción -->
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed mb-10">
+                Discover a curated library of extreme definition experiences. From ultra-vibrant videos up to crystal-clear <span class="text-blue-400 font-semibold">8K Resolution</span>, capturing the pure atmosphere of realistic environments and custom interactive gaming platforms.
+            </p>
+
+            <!-- Botones de Acción Rápida -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-blue-600 hover:bg-blue-500 transition duration-300 shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3">
+                    Explore Video Gallery
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-6l-7 7-7-7" /></svg>
+                </a>
+                <a href="#examples" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 hover:border-slate-700 transition duration-300 flex items-center justify-center gap-3">
+                    View UHD Examples
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador rápido de especificaciones -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 max-w-4xl mx-auto">
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-2xl sm:text-3xl font-bold text-blue-400 font-tech">8K UHD</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Max Quality Available</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-2xl sm:text-3xl font-bold text-blue-400 font-tech">60 FPS</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Buttery Smooth Motion</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-2xl sm:text-3xl font-bold text-blue-400 font-tech">5-9 Days</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Upload Frequency</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-2xl sm:text-3xl font-bold text-blue-400 font-tech">GDPS</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Custom Game Server</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DESTACADA: EL PRIMER VIDEO EN 8K (LLUVIA NOCTURNA) -->
+    <section id="showcase" class="py-20 bg-slate-950/60 border-y border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Información textual sobre el hito 8K -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                        ★ Milestone Video
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                        Our Ultimate Masterpiece:<br>
+                        <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">First Ever 8K Video</span>
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Experience a breathtaking night rain scene captured in unmatched clarity. Witness every single raindrop breaking against the city lights with pristine detail. 
+                    </p>
+                    
+                    <!-- Ficha técnica con fechas específicas provistas por el usuario -->
+                    <div class="bg-slate-900/80 rounded-xl p-5 border border-slate-800 space-y-3">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                            <span class="text-slate-500 text-sm">Originally Recorded:</span>
+                            <span class="text-slate-200 font-medium text-sm">May 30th</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                            <span class="text-slate-500 text-sm">Uploaded to YouTube:</span>
+                            <span class="text-slate-200 font-medium text-sm">June 1st</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500 text-sm">Atmosphere Theme:</span>
+                            <span class="text-blue-400 font-semibold text-sm">Night Rain (Lluvia Nocturna)</span>
+                        </div>
+                    </div>
+
+                    <a href="#examples" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors group">
+                        See high resolution static examples below
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </a>
+                </div>
+
+                <!-- Reproductor del primer video 8K (Lluvia Nocturna) -->
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl blue-glow bg-slate-900">
+                        <!-- Cabecera decorativa simulando un monitor profesional -->
+                        <div class="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            </div>
+                            <span class="text-xs font-tech text-slate-500 tracking-widest uppercase">8K PLAYER PRO</span>
+                            <div class="w-12"></div>
+                        </div>
+
+                        <!-- Iframe original incrustado del video de YouTube de lluvia nocturna -->
+                        <div class="w-full">
+                            <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+                                <iframe src="https://www.youtube.com/embed/DVZkwWsMzoM?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;" referrerpolicy="strict-origin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: EJEMPLOS DE ULTRA ALTA DEFINICIÓN EN MIS VIDEOS -->
+    <section id="examples" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+                Ultra High Definition <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Examples</span>
+            </h2>
+            <p class="max-w-2xl mx-auto text-slate-400">
+                Compare and preview the extreme visual clarity of our native workflows through real screen captures.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Ejemplo de video en 4K -->
+            <div class="bg-slate-900/30 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-800 transition duration-350">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 rounded bg-blue-950 text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-900/50">4K UHD Sample</span>
+                        <span class="text-slate-500 text-xs font-tech">3840 x 2160 pixels</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Example of our 4K video rendering</h3>
+                    <p class="text-slate-400 text-sm mb-6">
+                        An aesthetic representation of the crystal clear details captured across standard high framerate upscaled uploads.
+                    </p>
+                </div>
+                <!-- Contenedor de Imagen 4K -->
+                <div class="relative group rounded-xl overflow-hidden aspect-video bg-slate-950 border border-slate-800/60">
+                    <img src="example4K.jpg" 
+                         alt="Example of my video in 4K" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950/90 border border-dashed border-slate-800 rounded-xl\"><svg class=\"w-12 h-12 text-slate-600 mb-3\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\" /></svg><span class=\"text-sm font-semibold text-slate-400\">example4K.jpg</span><span class=\"text-xs text-slate-600 mt-1\">Example image placeholder (File not found yet)</span></div>';">
+                </div>
+            </div>
+
+            <!-- Ejemplo del primer video en 8K -->
+            <div class="bg-slate-900/30 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-800 transition duration-350">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 rounded bg-indigo-950 text-indigo-400 text-xs font-bold uppercase tracking-wider border border-indigo-900/50">8K MASTER SHOT</span>
+                        <span class="text-slate-500 text-xs font-tech">7680 x 4320 pixels</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Example of our First 8K video capture</h3>
+                    <p class="text-slate-400 text-sm mb-6">
+                        Static display from the iconic Night Rain video recorded on May 30th and uploaded on June 1st.
+                    </p>
+                </div>
+                <!-- Contenedor de Imagen 8K -->
+                <div class="relative group rounded-xl overflow-hidden aspect-video bg-slate-950 border border-slate-800/60">
+                    <img src="examplefirst8K.jpg" 
+                         alt="Example of my First video in 8K" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950/90 border border-dashed border-slate-800 rounded-xl\"><svg class=\"w-12 h-12 text-slate-600 mb-3\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\" /></svg><span class=\"text-sm font-semibold text-slate-400\">examplefirst8K.jpg</span><span class=\"text-xs text-slate-600 mt-1\">Example image placeholder (File not found yet)</span></div>';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE GALERÍA DE VIDEOS (YOUTUBE CHANNEL WIDGET) -->
+    <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+                Video <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Gallery</span>
+            </h2>
+            <p class="max-w-2xl mx-auto text-slate-400">
+                Explore our full catalog directly updated from YouTube. Standardized resolutions are filmed at native high framerates and upscaled to state-of-the-art standards.
+            </p>
+        </div>
+
+        <!-- Contenedor del Iframe de SociableKit -->
+        <div class="bg-slate-900/50 rounded-3xl p-4 sm:p-6 border border-slate-800/80 shadow-2xl relative">
+            <!-- Destello de fondo decorativo -->
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[80%] h-12 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
+                <!-- Iframe de SociableKit -->
+                <iframe src="https://widgets.sociablekit.com/youtube-channel-videos/iframe/25697607" frameborder="0" width="100%" height="640px" class="w-full block" style="min-height: 640px;"></iframe>
+            </div>
+            
+            <div class="mt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-xs sm:text-sm gap-4">
+                <p>💡 Can't see the full gallery? Make sure cookies are allowed.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                    <span>Synchronized with official YouTube channel</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS: DETALLES DE PRODUCCIÓN -->
+    <section id="services" class="py-20 bg-slate-950/60 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+                    Our <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Production Workflow</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-slate-400">
+                    We offer professional-tier recording and editing processes designed to turn raw source captures into immersive high-fidelity outputs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+                <!-- Paso 1: Grabación original -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-blue-900/60 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-950 flex items-center justify-center text-blue-400 mb-6 border border-blue-800/40">
+                            <!-- Icono de Cámara de video -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">1. Native Recording</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Every video begins captured in high quality. The source files are filmed natively at <span class="text-blue-400 font-semibold">1440p resolution at 60 Frames Per Second</span> to guarantee absolute clarity and responsive motion.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800/60 text-xs font-tech text-slate-500 uppercase tracking-widest">
+                        INPUT: 1440P @ 60FPS
+                    </div>
+                </div>
+
+                <!-- Paso 2: Edición & Post-producción -->
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-blue-900/60 transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 rounded-bl-full pointer-events-none"></div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-950 flex items-center justify-center text-indigo-400 mb-6 border border-indigo-800/40">
+                            <!-- Icono de Varita Mágica o Ajustes -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">2. Masterful Editing</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Our team structures raw clips seamlessly. Colors are dynamically corrected and atmospheric audio design is embedded to make the sensory experience as deep as possible.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800/60 text-xs font-tech text-slate-500 uppercase tracking-widest">
+                        PREMIUM POST-PRODUCTION
+                    </div>
+                </div>
+
+                <!-- Paso 3: Conversión & Escalado -->
+                <div class="bg-slate-900/50 border border-slate-850 rounded-2xl p-8 flex flex-col justify-between hover:border-cyan-900/60 transition duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 mb-6 border border-cyan-800/40">
+                            <!-- Icono de Escalado / Flechas -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">3. 4K Conversion</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Finally, the fully edited video undergoes a high-end conversion process, upscaling and rendering it to <span class="text-cyan-400 font-semibold">4K UHD resolution at 60 FPS</span> with premium bitrate optimizations.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-800/60 text-xs font-tech text-slate-500 uppercase tracking-widest">
+                        OUTPUT: 4K UHD @ 60FPS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INTERACTIVA: MI GDPS (GEOMETRY DASH PRIVATE SERVER) -->
+    <section id="gdps" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-950 rounded-3xl p-8 sm:p-16 border border-blue-900/40 shadow-2xl relative overflow-hidden">
+            <!-- Esferas de adorno simulando luces del juego -->
+            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/30 text-blue-400 text-sm font-semibold">
+                    🎮 Exclusive Community Sandbox
+                </div>
+                
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                    Join My <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">GDPS</span> Server
+                </h2>
+                
+                <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+                    Step inside a custom Geometry Dash Private Server made for creators and daring players. Explore fresh community levels, custom features, rates, and test your skills with players globally.
+                </p>
+
+                <div class="pt-4">
+                    <!-- Botón de acceso directo a tu GDPS -->
+                    <a href="https://mr3gdps1938.ps.fhgdps.com/" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-blue-500/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                        <span>Access My GDPS</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </a>
+                </div>
+
+                <p class="text-slate-500 text-xs">
+                    Current server link: <span class="text-blue-500/80 underline font-mono">mr3gdps1938.ps.fhgdps.com</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="flex justify-center items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-tech font-bold text-base text-slate-950">
+                    M
+                </div>
+                <span class="font-tech text-lg font-bold text-slate-300">The MRY</span>
+            </div>
+            
+            <p>© 2026 The MRY. All rights reserved. High Quality videos designed to amaze.</p>
+            
+            <div class="flex justify-center space-x-6 text-slate-400">
+                <a href="#home" class="hover:text-blue-400 transition">Back to Top</a>
+                <span>•</span>
+                <a href="#examples" class="hover:text-blue-400 transition">UHD Examples</a>
+                <span>•</span>
+                <a href="#gallery" class="hover:text-blue-400 transition">Video Gallery</a>
+                <span>•</span>
+                <a href="https://mr3gdps1938.ps.fhgdps.com/" target="_blank" class="hover:text-blue-400 transition">GDPS Sandbox</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVIDAD Y COMPORTAMIENTO DE LA INTERFAZ -->
+    <script>
+        // Manejador del menú móvil para pantallas pequeñas
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                // Cambiar icono a equis (cerrar)
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                // Reestablecer icono a hamburguesa
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+
+        // Ocultar el menú móvil automáticamente al pulsar sobre cualquier enlace interno
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+    </script>
+</body>
+</html>
